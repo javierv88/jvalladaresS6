@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jvalladaresS6.Consultar"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="CONSULTA DE INFORMACION" HorizontalTextAlignment="Center" FontSize="24" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Codigo" HorizontalTextAlignment="Center" FontSize="16" Grid.Row="0" Grid.Column="0"/>
+                <Label Text="Nombre" HorizontalTextAlignment="Center"  FontSize="16" Grid.Row="0" Grid.Column="1"/>
+                <Label Text="Apellido" HorizontalTextAlignment="Center" FontSize="16" Grid.Row="0" Grid.Column="2"/>
+                <Label Text="Edad" FontSize="16" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="3"/>
+            </Grid>
+
+            <Label Text="--------------------------------------------------------------------------------------------------"/>
+
+            <ListView x:Name="lista" ItemSelected="lista_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+          
+                                <Label x:Name="lblCodigo" Text="{Binding codigo}" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                                <Label x:Name="lblNombre" Text="{Binding nombre}" Grid.Row="0" Grid.Column="1"/>
+                                <Label x:Name="lblApellido" Text="{Binding apellido}" Grid.Row="0" Grid.Column="2"/>
+                                <Label x:Name="lblEdad" Text="{Binding edad}" Grid.Row="0" Grid.Column="3"/>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="btnRegresar" Text="REGRESAR" Clicked="btnRegresar_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
